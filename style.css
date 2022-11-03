@@ -6,38 +6,135 @@
 html, body {
   margin: 0;
   padding: 0;
+  font-size: 12px;
 }
-
-body {
-  font-family: "Poppins", sans-serif;
-}
-
-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+@media (min-width: 600px) {
+  html, body {
+    font-size: 16px;
+  }
 }
 
 .container {
-  padding: 0.5em;
+  padding: 1rem;
   max-width: 100%;
   margin: auto;
 }
-@media (min-width: 650px) {
+@media (min-width: 600px) {
   .container {
     max-width: 550px;
     margin-top: 1rem;
     border-radius: 10px;
-    box-shadow: 0 0 25px #000;
+    box-shadow: 0 0 25px #D9DEE6;
   }
 }
 
+/****************
+    TYPOGRAPHY
+*****************/
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.person-name,
+.person-bio {
+  color: #F8F8F8;
+  margin: 0;
+}
+
+.person-name {
+  font-weight: 600;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.person-bio {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+/****************
+      HEADER
+*****************/
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
 .user-icons {
-  width: 2rem;
-  height: auto;
+  color: #D9DEE6;
+  font-size: 2rem;
+  cursor: pointer;
+}
+.user-icons:hover, .user-icons:focus {
+  color: #FA695A;
+}
+.user-icons:active {
+  transform: scale(1.1);
 }
 
 .logo {
   width: 5rem;
   height: auto;
+}
+
+/****************
+    MAIN CONTENT
+*****************/
+.person {
+  display: flex;
+  flex-direction: column;
+  justify-items: flex-end;
+  max-width: 100%;
+  padding: 100% 1rem 0 1rem;
+  margin-bottom: 2rem;
+  border-radius: 10px;
+  background-size: cover;
+  background-position: center center;
+}
+
+.btns-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-wrapper {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 50%;
+  padding: 0.7rem;
+  margin: 0.5rem;
+  box-shadow: 0 0 15px #D9DEE6;
+  cursor: pointer;
+}
+.btn-wrapper:hover, .btn-wrapper:focus {
+  transform: scale(1.05);
+}
+.btn-wrapper img {
+  max-width: 30px;
+  height: auto;
+}
+
+#like-btn:active {
+  background-color: #DBFFF4;
+  box-shadow: 0 0 5px 3px #CCF1E6;
+}
+
+#dislike-btn:active {
+  background-color: #FFE7EF;
+  box-shadow: 0 0 5px 3px #EDD9DF;
+}
+
+.like-active {
+  background-color: #DBFFF4;
+  box-shadow: 0 0 5px 3px #CCF1E6;
+}
+
+.dislike-active {
+  background-color: #FFE7EF;
+  box-shadow: 0 0 5px 3px #EDD9DF;
 }/*# sourceMappingURL=style.css.map */
