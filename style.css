@@ -35,19 +35,19 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-.person-name,
-.person-bio {
+.dog-name,
+.dog-bio {
   color: #F8F8F8;
   margin: 0;
 }
 
-.person-name {
+.dog-name {
   font-weight: 600;
   font-size: 2rem;
   margin-bottom: 0.5rem;
 }
 
-.person-bio {
+.dog-bio {
   font-size: 1.5rem;
   font-weight: 400;
   margin-bottom: 1rem;
@@ -83,7 +83,7 @@ header {
 /****************
     MAIN CONTENT
 *****************/
-.person {
+.dog {
   display: flex;
   flex-direction: column;
   justify-items: flex-end;
@@ -119,22 +119,18 @@ header {
   height: auto;
 }
 
-#like-btn:active {
-  background-color: #DBFFF4;
-  box-shadow: 0 0 5px 3px #CCF1E6;
-}
-
-#dislike-btn:active {
-  background-color: #FFE7EF;
-  box-shadow: 0 0 5px 3px #EDD9DF;
-}
-
+.like-btn:active,
 .like-active {
   background-color: #DBFFF4;
   box-shadow: 0 0 5px 3px #CCF1E6;
 }
 
+.dislike-btn:active,
 .dislike-active {
   background-color: #FFE7EF;
   box-shadow: 0 0 5px 3px #EDD9DF;
+}
+
+.disabled-btn {
+  display: none;
 }/*# sourceMappingURL=style.css.map */
