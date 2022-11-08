@@ -106,7 +106,6 @@ header {
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-items: flex-end;
     max-width: 100%;
     padding: 100% 1rem 0 1rem;
     margin-bottom: 2rem;
@@ -163,6 +162,23 @@ header {
     left: 2rem;
     transform: rotate(-45deg);
     max-width: 30%;
+}
+
+#reset-btn {
+    cursor: pointer;
+    display: block;
+    margin: 0 auto 1rem auto; 
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 15px;
+    background-color: $highlight-color;
+    color: $light-color;
+    font-size: 1.2rem;
+    letter-spacing: 1.5px;
+    box-shadow: 3px 3px 10px 3px $graylish-color;
+    &:active {
+        box-shadow: inset 3px 3px 5px #544F4F;
+    }
 }
 
 .hide {

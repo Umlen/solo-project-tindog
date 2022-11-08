@@ -2,6 +2,7 @@ import dogsData from './data.js';
 import Dog from './Dog.js';
 
 let isWaiting = false;
+let dogsDataCopy = [...dogsData];
 
 const likeBtn = document.getElementById('like-btn');
 const dislikeBtn = document.getElementById('dislike-btn');
@@ -9,14 +10,14 @@ const dislikeBtn = document.getElementById('dislike-btn');
 dislikeBtn.addEventListener('click', dislike);
 likeBtn.addEventListener('click', like);
 
-const getNewDog = () => dogsData.length > 0 ? dogsData.shift() : {};
+const getNewDog = () => dogsDataCopy.length > 0 ? dogsDataCopy.shift() : {};
 
 function dogRender() {
     document.getElementById('dog-wrapper').innerHTML = dog.getDogHtml();
     document.querySelector('.dog').style.backgroundImage = `url(${dog.avatar})`;
 }
 
-let dog = new Dog(getNewDog());
+let dog = new Dog( getNewDog() );
 dogRender();
 
 function like() {
@@ -48,7 +49,7 @@ function dislike() {
 
 function swipe() { 
     dog.hasBeenSwiped = true;
-    if (dogsData.length > 0) {
+    if (dogsDataCopy.length > 0) {
         dog = new Dog( getNewDog() ); 
         dogRender(); 
     } else {
@@ -65,9 +66,19 @@ function badgeRender() {
 }
 
 function noMoreDogs() {
-    document.getElementById('dog-wrapper').innerHTML = `<p class="end-message">No more search results</p>`;
-    likeBtn.removeEventListener('click', like);
-    dislikeBtn.removeEventListener('click', dislike);
+    document.getElementById('dog-wrapper').innerHTML = `
+        <p class="end-message">No more search results</p>
+        <button id="reset-btn">Reset</button>
+    `;
+    document.getElementById('reset-btn').addEventListener( 'click', () => setTimeout( () => reset(), 1000 ) );
     likeBtn.classList.add('hide');
     dislikeBtn.classList.add('hide');
+}
+
+function reset() {    
+    likeBtn.classList.remove('hide');
+    dislikeBtn.classList.remove('hide');
+    dogsDataCopy = [...dogsData];
+    dog = new Dog( getNewDog() );
+    dogRender();
 }
