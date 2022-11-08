@@ -51,6 +51,16 @@ body {
   font-size: 1.5rem;
   font-weight: 400;
   margin-bottom: 1rem;
+  line-height: 1.5em;
+}
+
+.end-message {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: 5px;
+  color: #F8F8F8;
+  text-shadow: 0 0 5px #FA695A;
 }
 
 /****************
@@ -84,6 +94,7 @@ header {
     MAIN CONTENT
 *****************/
 .dog {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-items: flex-end;
@@ -119,18 +130,33 @@ header {
   height: auto;
 }
 
-.like-btn:active,
+.like-btn:hover,
+.like-btn:focus,
 .like-active {
   background-color: #DBFFF4;
   box-shadow: 0 0 5px 3px #CCF1E6;
 }
 
-.dislike-btn:active,
+.dislike-btn:hover,
+.dislike-btn:focus,
 .dislike-active {
   background-color: #FFE7EF;
   box-shadow: 0 0 5px 3px #EDD9DF;
 }
 
-.disabled-btn {
+.like-btn:active,
+.dislike-btn:active {
+  box-shadow: 0 0 5px 3px #F8F8F8;
+}
+
+.badge {
+  position: absolute;
+  top: 4rem;
+  left: 2rem;
+  transform: rotate(-45deg);
+  max-width: 30%;
+}
+
+.hide {
   display: none;
 }/*# sourceMappingURL=style.css.map */

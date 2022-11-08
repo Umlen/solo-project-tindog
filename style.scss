@@ -5,8 +5,8 @@
 }
 
 $graylish-color: #D9DEE6;
-$hover-color: #FA695A;
-$light-text-color: #F8F8F8;
+$highlight-color: #FA695A;
+$light-color: #F8F8F8;
 
 @mixin flex-container {
     display: flex;
@@ -44,7 +44,7 @@ body {
 
 .dog-name,
 .dog-bio {
-    color: $light-text-color;
+    color: $light-color;
     margin: 0;
 }
 
@@ -58,6 +58,16 @@ body {
     font-size: 1.5rem;
     font-weight: 400;
     margin-bottom: 1rem;
+    line-height: 1.5em;
+}
+
+.end-message {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 600;
+    letter-spacing: 5px;
+    color: $light-color;
+    text-shadow: 0 0 5px $highlight-color;
 }
 
 /****************
@@ -76,7 +86,7 @@ header {
     cursor: pointer;
     &:hover,
     &:focus {
-        color: $hover-color;
+        color: $highlight-color;
     }
     &:active {
         transform: scale(1.1);
@@ -93,6 +103,7 @@ header {
 *****************/
 
 .dog {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-items: flex-end;
@@ -127,18 +138,33 @@ header {
     }
 }
 
-.like-btn:active,
+.like-btn:hover,
+.like-btn:focus,
 .like-active  {
     background-color: #DBFFF4;
     box-shadow: 0 0 5px 3px #CCF1E6;
 }
 
-.dislike-btn:active,
+.dislike-btn:hover,
+.dislike-btn:focus,
 .dislike-active {
     background-color: #FFE7EF;
     box-shadow: 0 0 5px 3px #EDD9DF;
 }
 
-.disabled-btn {
+.like-btn:active,
+.dislike-btn:active {
+    box-shadow: 0 0 5px 3px $light-color;    
+}
+
+.badge {
+    position: absolute;
+    top: 4rem;
+    left: 2rem;
+    transform: rotate(-45deg);
+    max-width: 30%;
+}
+
+.hide {
     display: none;
 }
